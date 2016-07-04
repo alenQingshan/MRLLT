@@ -1,0 +1,73 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AnimatedGIFImageSerialization (0.2.0)
+  - FontAwesome (4.5.0)
+  - FontAwesomeIconFactory (2.1.1)
+  - Masonry (1.0.1)
+  - MBProgressHUD (0.9.2)
+  - MJExtension (3.0.10)
+  - MJRefresh (3.1.1)
+  - NullSafe (1.2.2)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
+  - TYAlertController (1.1.6)
+  - UICountingLabel (1.2.0)
+  - WebViewJavascriptBridge (5.0.5)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1)
+  - AnimatedGIFImageSerialization (~> 0.2)
+  - FontAwesome (~> 4.3)
+  - FontAwesomeIconFactory (~> 2.1)
+  - Masonry (~> 1.0)
+  - MBProgressHUD (~> 0.9)
+  - MJExtension (~> 3.0)
+  - MJRefresh (~> 3.1)
+  - NullSafe (~> 1.2)
+  - PNChart (~> 0.8)
+  - SDCycleScrollView (~> 1.65)
+  - SDWebImage (~> 3.7)
+  - SVProgressHUD (~> 2.0)
+  - TYAlertController (~> 1.1.6)
+  - UICountingLabel (~> 1.2)
+  - WebViewJavascriptBridge (~> 5.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AnimatedGIFImageSerialization: b0f0cfe71eac1ee45a3d57ae533c23b8e6f29501
+  FontAwesome: dd8c48bf965e771309d8af17c4d8579217b3e756
+  FontAwesomeIconFactory: bb9ce26d3dd13044854a82d380023c8e7d3ebf1a
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
+  NullSafe: cbf1f77a24558e49bc76e2673f31250d3087c792
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  TYAlertController: dfc58e9950d30f255f13c7e578496ec0cc9f0ef5
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
+
+COCOAPODS: 0.39.0
