@@ -24,6 +24,19 @@
 		EA391A571D2A2D320013380B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A561D2A2D320013380B /* FirstViewController.m */; };
 		EA391A5A1D2A2D460013380B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A591D2A2D460013380B /* SecondViewController.m */; };
 		EA391A5D1D2A2D530013380B /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A5C1D2A2D530013380B /* ThirdViewController.m */; };
+		EA391A721D2A38850013380B /* ForgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A611D2A38850013380B /* ForgetController.m */; };
+		EA391A731D2A38850013380B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A631D2A38850013380B /* LoginViewController.m */; };
+		EA391A741D2A38850013380B /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A651D2A38850013380B /* RegisterController.m */; };
+		EA391A761D2A38850013380B /* ForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A6B1D2A38850013380B /* ForgetPasswordView.m */; };
+		EA391A771D2A38850013380B /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A6D1D2A38850013380B /* LoginView.m */; };
+		EA391A781D2A38850013380B /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A6F1D2A38850013380B /* RegisterView.m */; };
+		EA391A7C1D2A392A0013380B /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A7B1D2A392A0013380B /* MyUtil.m */; };
+		EA391A7F1D2A51F10013380B /* SynthSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A7E1D2A51F10013380B /* SynthSegment.m */; };
+		EA391A821D2A532F0013380B /* MoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A811D2A532F0013380B /* MoveViewController.m */; };
+		EA391A851D2A53580013380B /* TelecommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A841D2A53580013380B /* TelecommunicationViewController.m */; };
+		EA391A881D2A53860013380B /* ExtendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A871D2A53860013380B /* ExtendViewController.m */; };
+		EA391A8B1D2A5C3B0013380B /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A8A1D2A5C3B0013380B /* HeaderView.m */; };
+		EA391A8E1D2A603C0013380B /* BodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A8D1D2A603C0013380B /* BodyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +92,32 @@
 		EA391A591D2A2D460013380B /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EA391A5B1D2A2D530013380B /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		EA391A5C1D2A2D530013380B /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		EA391A601D2A38850013380B /* ForgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetController.h; sourceTree = "<group>"; };
+		EA391A611D2A38850013380B /* ForgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetController.m; sourceTree = "<group>"; };
+		EA391A621D2A38850013380B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EA391A631D2A38850013380B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EA391A641D2A38850013380B /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
+		EA391A651D2A38850013380B /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
+		EA391A6A1D2A38850013380B /* ForgetPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordView.h; sourceTree = "<group>"; };
+		EA391A6B1D2A38850013380B /* ForgetPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordView.m; sourceTree = "<group>"; };
+		EA391A6C1D2A38850013380B /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		EA391A6D1D2A38850013380B /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		EA391A6E1D2A38850013380B /* RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		EA391A6F1D2A38850013380B /* RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		EA391A7A1D2A392A0013380B /* MyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtil.h; sourceTree = "<group>"; };
+		EA391A7B1D2A392A0013380B /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
+		EA391A7D1D2A51F10013380B /* SynthSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthSegment.h; sourceTree = "<group>"; };
+		EA391A7E1D2A51F10013380B /* SynthSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynthSegment.m; sourceTree = "<group>"; };
+		EA391A801D2A532F0013380B /* MoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveViewController.h; sourceTree = "<group>"; };
+		EA391A811D2A532F0013380B /* MoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveViewController.m; sourceTree = "<group>"; };
+		EA391A831D2A53580013380B /* TelecommunicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelecommunicationViewController.h; sourceTree = "<group>"; };
+		EA391A841D2A53580013380B /* TelecommunicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelecommunicationViewController.m; sourceTree = "<group>"; };
+		EA391A861D2A53860013380B /* ExtendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendViewController.h; sourceTree = "<group>"; };
+		EA391A871D2A53860013380B /* ExtendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendViewController.m; sourceTree = "<group>"; };
+		EA391A891D2A5C3B0013380B /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		EA391A8A1D2A5C3B0013380B /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		EA391A8C1D2A603C0013380B /* BodyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyView.h; sourceTree = "<group>"; };
+		EA391A8D1D2A603C0013380B /* BodyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyView.m; sourceTree = "<group>"; };
 		EC560F0B6A654FF95DF971AA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +231,7 @@
 		EA391A2A1D2A29410013380B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				EA391A5E1D2A38850013380B /* Login */,
 				EA391A391D2A2B7D0013380B /* Tool */,
 				EA391A371D2A2AE10013380B /* second */,
 				EA391A381D2A2AE10013380B /* Third */,
@@ -247,6 +287,8 @@
 		EA391A391D2A2B7D0013380B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EA391A7A1D2A392A0013380B /* MyUtil.h */,
+				EA391A7B1D2A392A0013380B /* MyUtil.m */,
 				EA391A431D2A2C560013380B /* UIBarButtonItem+Extension.h */,
 				EA391A441D2A2C560013380B /* UIBarButtonItem+Extension.m */,
 				EA391A451D2A2C560013380B /* UIButton+Extension.h */,
@@ -262,6 +304,12 @@
 			children = (
 				EA391A551D2A2D320013380B /* FirstViewController.h */,
 				EA391A561D2A2D320013380B /* FirstViewController.m */,
+				EA391A801D2A532F0013380B /* MoveViewController.h */,
+				EA391A811D2A532F0013380B /* MoveViewController.m */,
+				EA391A831D2A53580013380B /* TelecommunicationViewController.h */,
+				EA391A841D2A53580013380B /* TelecommunicationViewController.m */,
+				EA391A861D2A53860013380B /* ExtendViewController.h */,
+				EA391A871D2A53860013380B /* ExtendViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +324,12 @@
 		EA391A4E1D2A2D100013380B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA391A7D1D2A51F10013380B /* SynthSegment.h */,
+				EA391A7E1D2A51F10013380B /* SynthSegment.m */,
+				EA391A891D2A5C3B0013380B /* HeaderView.h */,
+				EA391A8A1D2A5C3B0013380B /* HeaderView.m */,
+				EA391A8C1D2A603C0013380B /* BodyView.h */,
+				EA391A8D1D2A603C0013380B /* BodyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +376,49 @@
 		EA391A541D2A2D1E0013380B /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA391A5E1D2A38850013380B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EA391A5F1D2A38850013380B /* Controller */,
+				EA391A681D2A38850013380B /* Model */,
+				EA391A691D2A38850013380B /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EA391A5F1D2A38850013380B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA391A601D2A38850013380B /* ForgetController.h */,
+				EA391A611D2A38850013380B /* ForgetController.m */,
+				EA391A621D2A38850013380B /* LoginViewController.h */,
+				EA391A631D2A38850013380B /* LoginViewController.m */,
+				EA391A641D2A38850013380B /* RegisterController.h */,
+				EA391A651D2A38850013380B /* RegisterController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EA391A681D2A38850013380B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA391A691D2A38850013380B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA391A6A1D2A38850013380B /* ForgetPasswordView.h */,
+				EA391A6B1D2A38850013380B /* ForgetPasswordView.m */,
+				EA391A6C1D2A38850013380B /* LoginView.h */,
+				EA391A6D1D2A38850013380B /* LoginView.m */,
+				EA391A6E1D2A38850013380B /* RegisterView.h */,
+				EA391A6F1D2A38850013380B /* RegisterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,15 +605,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA391A5A1D2A2D460013380B /* SecondViewController.m in Sources */,
+				EA391A821D2A532F0013380B /* MoveViewController.m in Sources */,
+				EA391A881D2A53860013380B /* ExtendViewController.m in Sources */,
 				EA391A491D2A2C560013380B /* UIBarButtonItem+Extension.m in Sources */,
+				EA391A731D2A38850013380B /* LoginViewController.m in Sources */,
 				EA391A571D2A2D320013380B /* FirstViewController.m in Sources */,
+				EA391A761D2A38850013380B /* ForgetPasswordView.m in Sources */,
+				EA391A781D2A38850013380B /* RegisterView.m in Sources */,
+				EA391A741D2A38850013380B /* RegisterController.m in Sources */,
 				EA391A351D2A29410013380B /* MainTabbarController.m in Sources */,
+				EA391A8B1D2A5C3B0013380B /* HeaderView.m in Sources */,
+				EA391A771D2A38850013380B /* LoginView.m in Sources */,
+				EA391A851D2A53580013380B /* TelecommunicationViewController.m in Sources */,
+				EA391A721D2A38850013380B /* ForgetController.m in Sources */,
+				EA391A8E1D2A603C0013380B /* BodyView.m in Sources */,
 				EA391A4A1D2A2C560013380B /* UIButton+Extension.m in Sources */,
 				EA391A5D1D2A2D530013380B /* ThirdViewController.m in Sources */,
 				EA391A331D2A29410013380B /* BaseViewController.m in Sources */,
+				EA391A7C1D2A392A0013380B /* MyUtil.m in Sources */,
 				EA3919FC1D2A28E10013380B /* AppDelegate.m in Sources */,
 				EA3919F91D2A28E10013380B /* main.m in Sources */,
 				EA391A4B1D2A2C560013380B /* UIView+Extension.m in Sources */,
+				EA391A7F1D2A51F10013380B /* SynthSegment.m in Sources */,
 				EA391A341D2A29410013380B /* MainNavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

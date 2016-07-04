@@ -22,9 +22,9 @@
     FirstViewController *notes=[[FirstViewController alloc]init];
     [self addChildViewController:notes withTitle:@"首页" image:[factory createImageForIcon:NIKFontAwesomeIconHome] selectedImage:nil];
     SecondViewController *tactics=[[SecondViewController alloc]init];
-    [self addChildViewController:tactics withTitle:@"活动" image:[factory createImageForIcon:NIKFontAwesomeIconQrcode] selectedImage:nil];
+    [self addChildViewController:tactics withTitle:@"免费" image:[factory createImageForIcon:NIKFontAwesomeIconQrcode] selectedImage:nil];
     ThirdViewController *tools=[[ThirdViewController alloc]init];
-    [self addChildViewController:tools withTitle:@"我的账户" image:[factory createImageForIcon:NIKFontAwesomeIconUser] selectedImage:nil];
+    [self addChildViewController:tools withTitle:@"我的" image:[factory createImageForIcon:NIKFontAwesomeIconUser] selectedImage:nil];
 
 //    FirstViewController *notes=[[FirstViewController alloc]init];
 //    [self addChildViewController:notes withTitle:@"首页" image:[UIImage imageNamed:@"tab_home_normal"] selectedImage:nil];
