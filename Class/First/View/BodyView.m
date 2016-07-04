@@ -22,23 +22,40 @@
 -(void)createUI
 {
     self.mbuttunArray = [NSMutableArray arrayWithObjects:@"20M",@"50M",@"100M",@"200M",@"500M",nil];
-    NSInteger lie = 3;
-    NSInteger hang = self.mbuttunArray.count/lie;
-    CGFloat buttonwidth = (Screen_width-80)/lie;
-    CGFloat buttonhidth = 40;
+    // 添加6个按钮
+    int maxCols = 3;
+    CGFloat buttonW = (Screen_width-80)/3;
+    CGFloat buttonH = 40;
+    CGFloat buttonStarY = 20;
+    CGFloat buttonStarX = 20;
+    CGFloat xMargin = (Screen_width - 2 * buttonStarX - maxCols * buttonW) / (maxCols - 1);
+    CGFloat yMargin = 20;
     
-    for (int i = 0; i < _mbuttunArray.count; i++) {
-        CGFloat jianxi = Screen_width - (lie * buttonwidth)/(lie - 1);
-        CGFloat rowjianxi = jianxi;
-        NSInteger row = hang;
-        CGFloat shopY = row * (buttonhidth +rowjianxi);
-        int col = hang % 3;
-        CGFloat shopX = col * (buttonwidth *jianxi);
-        
-        UIButton *button = [MyUtil createBtnFrame:CGRectMake(shopX, shopY, buttonwidth, buttonhidth) title:self.mbuttunArray[i] backgroundColor:[UIColor whiteColor] titleColor:[UIColor blackColor] target:self action:@selector(buttonClick:)];
+    for (int i = 0; i < self.mbuttunArray.count; i++) {
+        UIButton *button = [[UIButton alloc] init];
+        button.backgroundColor = [UIColor whiteColor];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        [button setTitle:self.mbuttunArray[i] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         button.tag = 100+i;
-        [self addSubview:button];
+        // 设置frame
+        button.width = buttonW;
+        button.height = buttonH;
+        // 九宫格计算
+        /*
+         0  1  2
+         3  4  5
+         6  7  8
+         */
+        int row = i / maxCols; // 行
+        int col = i % maxCols; // 列
         
+        button.x = buttonStarX + col * (xMargin + buttonW);
+        button.y = buttonStarY + row * (yMargin + buttonH);
+        
+        
+        [self addSubview:button];
     }
 }
 

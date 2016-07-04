@@ -7,7 +7,7 @@
 //
 
 #import "MoveViewController.h"
-
+#import "BodyView.h"
 @interface MoveViewController ()
 
 @end
@@ -19,6 +19,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = WhiteColor;
     NSLog(@"%f",self.view.frame.size.height);
+    BodyView *body = [[BodyView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:body];
 }
 
 - (void)didReceiveMemoryWarning {
