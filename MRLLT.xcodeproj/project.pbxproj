@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		35CC2AEE0187C99F6A9AC35D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D1D78ADA9AE5AF479EA38A /* libPods.a */; };
+		EA1258261D2B420F00E2E2B8 /* getMoneyHelp.html in Resources */ = {isa = PBXBuildFile; fileRef = EA1258251D2B420F00E2E2B8 /* getMoneyHelp.html */; };
+		EA1258291D2B48EC00E2E2B8 /* MyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1258281D2B48EC00E2E2B8 /* MyCollectionCell.m */; };
 		EA3919F91D2A28E10013380B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3919F81D2A28E10013380B /* main.m */; };
 		EA3919FC1D2A28E10013380B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3919FB1D2A28E10013380B /* AppDelegate.m */; };
 		EA391A021D2A28E10013380B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA391A001D2A28E10013380B /* Main.storyboard */; };
@@ -59,6 +61,9 @@
 /* Begin PBXFileReference section */
 		16D1D78ADA9AE5AF479EA38A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68B5110ED7A13220BF39E7E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA1258251D2B420F00E2E2B8 /* getMoneyHelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = getMoneyHelp.html; sourceTree = "<group>"; };
+		EA1258271D2B48EC00E2E2B8 /* MyCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionCell.h; sourceTree = "<group>"; };
+		EA1258281D2B48EC00E2E2B8 /* MyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionCell.m; sourceTree = "<group>"; };
 		EA3919F41D2A28E10013380B /* MRLLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRLLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3919F81D2A28E10013380B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA3919FA1D2A28E10013380B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -324,6 +329,9 @@
 		EA391A4E1D2A2D100013380B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA1258271D2B48EC00E2E2B8 /* MyCollectionCell.h */,
+				EA1258281D2B48EC00E2E2B8 /* MyCollectionCell.m */,
+				EA1258251D2B420F00E2E2B8 /* getMoneyHelp.html */,
 				EA391A7D1D2A51F10013380B /* SynthSegment.h */,
 				EA391A7E1D2A51F10013380B /* SynthSegment.m */,
 				EA391A891D2A5C3B0013380B /* HeaderView.h */,
@@ -530,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA391A071D2A28E20013380B /* LaunchScreen.storyboard in Resources */,
+				EA1258261D2B420F00E2E2B8 /* getMoneyHelp.html in Resources */,
 				EA391A041D2A28E20013380B /* Assets.xcassets in Resources */,
 				EA391A021D2A28E10013380B /* Main.storyboard in Resources */,
 			);
@@ -614,6 +623,7 @@
 				EA391A781D2A38850013380B /* RegisterView.m in Sources */,
 				EA391A741D2A38850013380B /* RegisterController.m in Sources */,
 				EA391A351D2A29410013380B /* MainTabbarController.m in Sources */,
+				EA1258291D2B48EC00E2E2B8 /* MyCollectionCell.m in Sources */,
 				EA391A8B1D2A5C3B0013380B /* HeaderView.m in Sources */,
 				EA391A771D2A38850013380B /* LoginView.m in Sources */,
 				EA391A851D2A53580013380B /* TelecommunicationViewController.m in Sources */,

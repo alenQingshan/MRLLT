@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BodyView : UIView
+@interface BodyView : UIView<UITextFieldDelegate>
 
 @property (nonatomic,strong)NSMutableArray *mbuttunArray;
+@property (nonatomic,strong)UITextField *userIDField;//用户名
 
 @end

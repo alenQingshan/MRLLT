@@ -105,7 +105,6 @@
     for (int i=0; i<self.childViewControllers.count; i++) {
         UIViewController * vc = self.childViewControllers[i];
         vc.view.frame = CGRectMake(i * Screen_width,0, Screen_width, Screen_height-QS_segmentH-64-49-100);
-        NSLog(@"wo的 = %f",vc.view.frame.size.height);
         [sv addSubview:vc.view];
     }
     sv.contentSize = CGSizeMake(3 * Screen_width, 0);

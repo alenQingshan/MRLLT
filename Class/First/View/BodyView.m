@@ -7,9 +7,11 @@
 //
 
 #import "BodyView.h"
-
+#import <WebKit/WebKit.h>
 @implementation BodyView
-
+{
+    UIButton *_agreeButton;
+}
 -(id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -21,46 +23,54 @@
 
 -(void)createUI
 {
-    self.mbuttunArray = [NSMutableArray arrayWithObjects:@"20M",@"50M",@"100M",@"200M",@"500M",nil];
-    // 添加6个按钮
-    int maxCols = 3;
-    CGFloat buttonW = (Screen_width-80)/3;
-    CGFloat buttonH = 40;
-    CGFloat buttonStarY = 20;
-    CGFloat buttonStarX = 20;
-    CGFloat xMargin = (Screen_width - 2 * buttonStarX - maxCols * buttonW) / (maxCols - 1);
-    CGFloat yMargin = 20;
+    UIView *userback = [[UIView alloc]initWithFrame:CGRectMake(10, 0, Screen_width-20, 44)];
+    userback.backgroundColor = [UIColor whiteColor];
+    [self addSubview:userback];
     
-    for (int i = 0; i < self.mbuttunArray.count; i++) {
-        UIButton *button = [[UIButton alloc] init];
-        button.backgroundColor = [UIColor whiteColor];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
-        [button setTitle:self.mbuttunArray[i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        button.tag = 100+i;
-        // 设置frame
-        button.width = buttonW;
-        button.height = buttonH;
-        // 九宫格计算
-        /*
-         0  1  2
-         3  4  5
-         6  7  8
-         */
-        int row = i / maxCols; // 行
-        int col = i % maxCols; // 列
-        
-        button.x = buttonStarX + col * (xMargin + buttonW);
-        button.y = buttonStarY + row * (yMargin + buttonH);
-        
-        
-        [self addSubview:button];
-    }
+    UIImageView *userImage = [MyUtil createImageView:CGRectMake(10, 11, 22, 22) imageName:@"register_phone"];
+    [userback addSubview:userImage];
+    
+    _userIDField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"请输入手机号码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
+    _userIDField.delegate = self;
+    [userback addSubview:_userIDField];
+    
+    _agreeButton = [MyUtil createBtnFrame:CGRectMake(10, CGRectGetMaxY(userback.frame)+20, Screen_width-20, 40) title:@"立即支付" backgroundColor:TintColor titleColor:[UIColor whiteColor] target:self action:@selector(agree)];
+    [self addSubview:_agreeButton];
+    
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"getMoneyHelp" ofType:@"html"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    WKWebView *webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_agreeButton.frame)+10, Screen_width, 120)];
+    webView.scrollView.scrollEnabled = NO;
+    [self addSubview:webView];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
 }
 
--(void)buttonClick:(UIButton *)btn{
+-(void)agree
+{
+    
+}
+
+-(void)buttonClick:(UIButton *)btn
+{
     NSLog(@"%li",btn.tag);
+    
+}
+
+#pragma mark - UITextField 代理
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_userIDField resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*
