@@ -29,10 +29,14 @@
     
     UIView *userback = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(titleimage.frame)+20, Screen_width-20, 44)];
     userback.backgroundColor = [UIColor whiteColor];
+    userback.layer.borderWidth = 1;
+    userback.layer.borderColor = [[UIColor grayColor] CGColor];
     [self addSubview:userback];
     
     UIView *passBack = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(userback.frame)+10, Screen_width-20, 44)];
     passBack.backgroundColor = [UIColor whiteColor];
+    passBack.layer.borderWidth = 1;
+    passBack.layer.borderColor = [[UIColor grayColor] CGColor];
     [self addSubview:passBack];
     
     _userIDField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"请输入手机号码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];

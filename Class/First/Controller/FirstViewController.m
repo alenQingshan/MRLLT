@@ -113,7 +113,7 @@
 
 -(void)createBarButtonItem
 {
-    UIBarButtonItem *leftButton =  [UIBarButtonItem itemWithTarget:self action:@selector(backToLogin) nomalImage:[UIImage imageNamed:@"register_invitation_code"] higeLightedImage:[UIImage imageNamed:@"register_invitation_code"]];
+    UIBarButtonItem *leftButton =  [UIBarButtonItem itemWithTarget:self action:@selector(backToLogin) nomalImage:[UIImage imageNamed:@"people"] higeLightedImage:[UIImage imageNamed:@"people"]];
     self.navigationItem.leftBarButtonItem=leftButton;
     
     UIBarButtonItem *rightButton =  [UIBarButtonItem itemWithTarget:self action:@selector(erweima) nomalImage:[UIImage imageNamed:@"register_codes"] higeLightedImage:[UIImage imageNamed:@"register_codes"]];

@@ -1,23 +1,23 @@
 //
-//  ThirdViewController.m
+//  FourthViewController.m
 //  MRLLT
 //
-//  Created by 刘青山 on 16/7/4.
+//  Created by 刘青山 on 16/8/12.
 //  Copyright © 2016年 刘青山. All rights reserved.
 //
 
-#import "ThirdViewController.h"
+#import "FourthViewController.h"
 
-@interface ThirdViewController ()
+@interface FourthViewController ()
 
 @end
 
-@implementation ThirdViewController
+@implementation FourthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setNavigation:@"我的账户"];
+    [self setNavigation:@"记录"];
 }
 
 - (void)didReceiveMemoryWarning {

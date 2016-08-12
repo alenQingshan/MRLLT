@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setNavigation:@"活动"];
+    [self setNavigation:@"消息"];
 }
 
 - (void)didReceiveMemoryWarning {
