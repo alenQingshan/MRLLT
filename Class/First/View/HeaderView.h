@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderView : UIView
+@interface HeaderView : UIView<UITextFieldDelegate>
+
+@property (nonatomic,strong)UITextField *userIDField;//用户名
 
 @end

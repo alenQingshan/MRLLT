@@ -32,9 +32,6 @@
 		EA391A781D2A38850013380B /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A6F1D2A38850013380B /* RegisterView.m */; };
 		EA391A7C1D2A392A0013380B /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A7B1D2A392A0013380B /* MyUtil.m */; };
 		EA391A7F1D2A51F10013380B /* SynthSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A7E1D2A51F10013380B /* SynthSegment.m */; };
-		EA391A821D2A532F0013380B /* MoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A811D2A532F0013380B /* MoveViewController.m */; };
-		EA391A851D2A53580013380B /* TelecommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A841D2A53580013380B /* TelecommunicationViewController.m */; };
-		EA391A881D2A53860013380B /* ExtendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A871D2A53860013380B /* ExtendViewController.m */; };
 		EA391A8B1D2A5C3B0013380B /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A8A1D2A5C3B0013380B /* HeaderView.m */; };
 		EA391A8E1D2A603C0013380B /* BodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA391A8D1D2A603C0013380B /* BodyView.m */; };
 		EA4A15E31D5DBCDD00A0C88F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E21D5DBCDD00A0C88F /* SecondViewController.m */; };
@@ -110,12 +107,6 @@
 		EA391A7B1D2A392A0013380B /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
 		EA391A7D1D2A51F10013380B /* SynthSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthSegment.h; sourceTree = "<group>"; };
 		EA391A7E1D2A51F10013380B /* SynthSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynthSegment.m; sourceTree = "<group>"; };
-		EA391A801D2A532F0013380B /* MoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveViewController.h; sourceTree = "<group>"; };
-		EA391A811D2A532F0013380B /* MoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveViewController.m; sourceTree = "<group>"; };
-		EA391A831D2A53580013380B /* TelecommunicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelecommunicationViewController.h; sourceTree = "<group>"; };
-		EA391A841D2A53580013380B /* TelecommunicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelecommunicationViewController.m; sourceTree = "<group>"; };
-		EA391A861D2A53860013380B /* ExtendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendViewController.h; sourceTree = "<group>"; };
-		EA391A871D2A53860013380B /* ExtendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendViewController.m; sourceTree = "<group>"; };
 		EA391A891D2A5C3B0013380B /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		EA391A8A1D2A5C3B0013380B /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		EA391A8C1D2A603C0013380B /* BodyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyView.h; sourceTree = "<group>"; };
@@ -313,12 +304,6 @@
 			children = (
 				EA391A551D2A2D320013380B /* FirstViewController.h */,
 				EA391A561D2A2D320013380B /* FirstViewController.m */,
-				EA391A801D2A532F0013380B /* MoveViewController.h */,
-				EA391A811D2A532F0013380B /* MoveViewController.m */,
-				EA391A831D2A53580013380B /* TelecommunicationViewController.h */,
-				EA391A841D2A53580013380B /* TelecommunicationViewController.m */,
-				EA391A861D2A53860013380B /* ExtendViewController.h */,
-				EA391A871D2A53860013380B /* ExtendViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -650,8 +635,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA391A821D2A532F0013380B /* MoveViewController.m in Sources */,
-				EA391A881D2A53860013380B /* ExtendViewController.m in Sources */,
 				EA391A491D2A2C560013380B /* UIBarButtonItem+Extension.m in Sources */,
 				EA391A731D2A38850013380B /* LoginViewController.m in Sources */,
 				EA391A571D2A2D320013380B /* FirstViewController.m in Sources */,
@@ -663,7 +646,6 @@
 				EA1258291D2B48EC00E2E2B8 /* MyCollectionCell.m in Sources */,
 				EA391A8B1D2A5C3B0013380B /* HeaderView.m in Sources */,
 				EA391A771D2A38850013380B /* LoginView.m in Sources */,
-				EA391A851D2A53580013380B /* TelecommunicationViewController.m in Sources */,
 				EA4A15E31D5DBCDD00A0C88F /* SecondViewController.m in Sources */,
 				EA391A721D2A38850013380B /* ForgetController.m in Sources */,
 				EA4A15E91D5DBCFD00A0C88F /* FourthViewController.m in Sources */,

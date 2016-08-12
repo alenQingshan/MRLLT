@@ -54,9 +54,9 @@
         case 4:
             _nameLabel.text = @"500M";
             break;
-//        case 5:
-//            _nameLabel.text = @"我的消息";
-//            break;
+        case 5:
+            _nameLabel.text = @"1000M";
+            break;
             
         default:
             break;

@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = TintColor;
+        self.backgroundColor = [UIColor whiteColor];
         [self createUI];
     }
     return self;
@@ -25,7 +25,7 @@
     UILabel *titleLabel = [MyUtil createLabelFrame:CGRectMake(20, 0, 20, 100) title:@"" font:nil];
     titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.text = @"公\n告";
-    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textColor = [UIColor grayColor];
     titleLabel.numberOfLines = [titleLabel.text length];
     [self addSubview:titleLabel];
     
@@ -33,10 +33,21 @@
     for (int i = 0; i < 4; i++) {
         UILabel *sublabel = [MyUtil createLabelFrame:CGRectMake(60, 10+20*i, Screen_width-60, 20) title:@"" font:LFFont(SubTitleFont)];
         sublabel.font = LFFont(12);
-        sublabel.textColor = [UIColor whiteColor];
+        sublabel.textColor = [UIColor grayColor];
         sublabel.text = arr[i];
         [self addSubview:sublabel];
     }
+    
+    _userIDField = [MyUtil createTextFieldFrame:CGRectMake(20, 100, Screen_width-60, 40) placeHolder:@"请输入手机号码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
+    _userIDField.delegate = self;
+    [self addSubview:_userIDField];
+    
+    UIImageView *userImage = [MyUtil createImageView:CGRectMake(Screen_width-60, 110, 30, 30) imageName:@"phoneUser"];
+    [self addSubview:userImage];
+    
+    UILabel *nameLabel = [MyUtil createLabelFrame:CGRectMake(20, 140, Screen_width-40, 20) title:@"中国联通" font:LFFont(TitleFont)];
+    nameLabel.textColor = [UIColor grayColor];
+    [self addSubview:nameLabel];
     
 }
 /*
@@ -46,5 +57,21 @@
     // Drawing code
 }
 */
+
+#pragma mark - UITextField 代理
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_userIDField resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end
