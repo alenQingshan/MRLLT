@@ -18,7 +18,7 @@ typedef enum : NSUInteger {
 
 @protocol LoginViewDelegate <NSObject>
 
--(void)leftPresonalAndNotification:(LoginView *)view centerLeftOrRight:(NSInteger)wtf;
+-(void)leftPresonalAndNotification:(LoginView *)view centerLeftOrRight:(NSInteger)wtf isremember:(BOOL)remem;
 
 @optional
 
@@ -32,6 +32,7 @@ typedef enum : NSUInteger {
 @property (nonatomic,assign) id<LoginViewDelegate>delegate;//代理属性
 @property (nonatomic,strong)UITextField *userIDField;//用户名
 @property (nonatomic,strong)UITextField *passwordField;//密码
+@property (nonatomic,strong)UIButton *rememberButton;//记住密码
 
 
 @end

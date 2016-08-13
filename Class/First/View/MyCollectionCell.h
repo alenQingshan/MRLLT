@@ -11,6 +11,7 @@
 @interface MyCollectionCell : UICollectionViewCell
 
 
--(void)config:(NSString *)name index:(NSInteger)idx;
+-(void)config:(NSString *)name index:(NSInteger)idx select:(NSInteger)sel;
+
 
 @end

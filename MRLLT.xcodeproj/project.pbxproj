@@ -37,6 +37,10 @@
 		EA4A15E31D5DBCDD00A0C88F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E21D5DBCDD00A0C88F /* SecondViewController.m */; };
 		EA4A15E61D5DBCED00A0C88F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E51D5DBCED00A0C88F /* ThirdViewController.m */; };
 		EA4A15E91D5DBCFD00A0C88F /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E81D5DBCFD00A0C88F /* FourthViewController.m */; };
+		EA4A15EE1D5EF0B200A0C88F /* getMoneyHelp.html in Resources */ = {isa = PBXBuildFile; fileRef = EA4A15ED1D5EF0B200A0C88F /* getMoneyHelp.html */; };
+		EA4A15F11D5EFF8300A0C88F /* FirstViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15F01D5EFF8300A0C88F /* FirstViewCell.m */; };
+		EA4A15F41D5F062800A0C88F /* FourthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15F31D5F062800A0C88F /* FourthViewCell.m */; };
+		EA4A15F71D5F0DB900A0C88F /* HeaderFourthView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15F61D5F0DB900A0C88F /* HeaderFourthView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,13 @@
 		EA4A15E51D5DBCED00A0C88F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		EA4A15E71D5DBCFD00A0C88F /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		EA4A15E81D5DBCFD00A0C88F /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		EA4A15ED1D5EF0B200A0C88F /* getMoneyHelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = getMoneyHelp.html; sourceTree = "<group>"; };
+		EA4A15EF1D5EFF8300A0C88F /* FirstViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewCell.h; sourceTree = "<group>"; };
+		EA4A15F01D5EFF8300A0C88F /* FirstViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewCell.m; sourceTree = "<group>"; };
+		EA4A15F21D5F062800A0C88F /* FourthViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewCell.h; sourceTree = "<group>"; };
+		EA4A15F31D5F062800A0C88F /* FourthViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewCell.m; sourceTree = "<group>"; };
+		EA4A15F51D5F0DB900A0C88F /* HeaderFourthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderFourthView.h; sourceTree = "<group>"; };
+		EA4A15F61D5F0DB900A0C88F /* HeaderFourthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderFourthView.m; sourceTree = "<group>"; };
 		EC560F0B6A654FF95DF971AA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +331,8 @@
 			children = (
 				EA1258271D2B48EC00E2E2B8 /* MyCollectionCell.h */,
 				EA1258281D2B48EC00E2E2B8 /* MyCollectionCell.m */,
+				EA4A15EF1D5EFF8300A0C88F /* FirstViewCell.h */,
+				EA4A15F01D5EFF8300A0C88F /* FirstViewCell.m */,
 				EA1258251D2B420F00E2E2B8 /* getMoneyHelp.html */,
 				EA391A7D1D2A51F10013380B /* SynthSegment.h */,
 				EA391A7E1D2A51F10013380B /* SynthSegment.m */,
@@ -336,6 +349,7 @@
 			children = (
 				EA4A15E41D5DBCED00A0C88F /* ThirdViewController.h */,
 				EA4A15E51D5DBCED00A0C88F /* ThirdViewController.m */,
+				EA4A15ED1D5EF0B200A0C88F /* getMoneyHelp.html */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -449,6 +463,10 @@
 		EA4A15E01D5DBC7900A0C88F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA4A15F21D5F062800A0C88F /* FourthViewCell.h */,
+				EA4A15F31D5F062800A0C88F /* FourthViewCell.m */,
+				EA4A15F51D5F0DB900A0C88F /* HeaderFourthView.h */,
+				EA4A15F61D5F0DB900A0C88F /* HeaderFourthView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -563,6 +581,7 @@
 				EA1258261D2B420F00E2E2B8 /* getMoneyHelp.html in Resources */,
 				EA391A041D2A28E20013380B /* Assets.xcassets in Resources */,
 				EA391A021D2A28E10013380B /* Main.storyboard in Resources */,
+				EA4A15EE1D5EF0B200A0C88F /* getMoneyHelp.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +658,7 @@
 				EA391A731D2A38850013380B /* LoginViewController.m in Sources */,
 				EA391A571D2A2D320013380B /* FirstViewController.m in Sources */,
 				EA391A761D2A38850013380B /* ForgetPasswordView.m in Sources */,
+				EA4A15F41D5F062800A0C88F /* FourthViewCell.m in Sources */,
 				EA4A15E61D5DBCED00A0C88F /* ThirdViewController.m in Sources */,
 				EA391A781D2A38850013380B /* RegisterView.m in Sources */,
 				EA391A741D2A38850013380B /* RegisterController.m in Sources */,
@@ -648,10 +668,12 @@
 				EA391A771D2A38850013380B /* LoginView.m in Sources */,
 				EA4A15E31D5DBCDD00A0C88F /* SecondViewController.m in Sources */,
 				EA391A721D2A38850013380B /* ForgetController.m in Sources */,
+				EA4A15F11D5EFF8300A0C88F /* FirstViewCell.m in Sources */,
 				EA4A15E91D5DBCFD00A0C88F /* FourthViewController.m in Sources */,
 				EA391A8E1D2A603C0013380B /* BodyView.m in Sources */,
 				EA391A4A1D2A2C560013380B /* UIButton+Extension.m in Sources */,
 				EA391A331D2A29410013380B /* BaseViewController.m in Sources */,
+				EA4A15F71D5F0DB900A0C88F /* HeaderFourthView.m in Sources */,
 				EA391A7C1D2A392A0013380B /* MyUtil.m in Sources */,
 				EA3919FC1D2A28E10013380B /* AppDelegate.m in Sources */,
 				EA3919F91D2A28E10013380B /* main.m in Sources */,

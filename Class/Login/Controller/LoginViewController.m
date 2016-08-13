@@ -50,7 +50,7 @@
 */
 
 #pragma mark - LoginViewDelegate
--(void)leftPresonalAndNotification:(LoginView *)view centerLeftOrRight:(NSInteger)wtf
+-(void)leftPresonalAndNotification:(LoginView *)view centerLeftOrRight:(NSInteger)wtf isremember:(BOOL)remem
 {
     ForgetController *forget = [[ForgetController alloc]init];
     RegisterController *regist = [[RegisterController alloc]init];

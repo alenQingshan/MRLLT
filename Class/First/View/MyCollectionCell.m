@@ -12,6 +12,7 @@
 {
     UILabel *_fontawesomeLabel;
     UILabel *_nameLabel;
+    UIView *_backgroundView;
 }
 
 @end
@@ -30,13 +31,17 @@
 
 -(void)createUI
 {
+    _backgroundView = [[UIView alloc]initWithFrame:self.bounds];
+    _backgroundView.backgroundColor = [UIColor whiteColor];
+    [self.contentView addSubview:_backgroundView];
+    
     _nameLabel = [MyUtil createLabelFrame:self.bounds title:@"" font:LFFont(TitleFont)];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
-    [self.contentView addSubview:_nameLabel];
+    [_backgroundView addSubview:_nameLabel];
 
 }
 
--(void)config:(NSString *)name index:(NSInteger)idx
+-(void)config:(NSString *)name index:(NSInteger)idx select:(NSInteger)sel
 {
     switch (idx) {
         case 0:
@@ -61,7 +66,19 @@
         default:
             break;
     }
+    
+    if (idx == sel) {
+        _nameLabel.textColor = TintColor;
+        _backgroundView.layer.borderWidth = 1;
+        _backgroundView.layer.borderColor = [TintColor CGColor];
+    }else{
+        _nameLabel.textColor = [UIColor blackColor];
+        _backgroundView.layer.borderWidth = 1;
+        _backgroundView.layer.borderColor = [[UIColor clearColor] CGColor];
+    }
 
 }
+
+
 
 @end

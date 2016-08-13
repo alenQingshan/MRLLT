@@ -9,7 +9,9 @@
 #import "ThirdViewController.h"
 
 @interface ThirdViewController ()
-
+{
+    UITextView *_textView;
+}
 @end
 
 @implementation ThirdViewController
@@ -18,6 +20,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNavigation:@"软件开发"];
+    [self createUI];
+}
+
+-(void)createUI
+{
+    _textView = [[UITextView alloc]initWithFrame:self.view.bounds];
+    _textView.text = @"";
+    
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"getMoneyHelp" ofType:@"html"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, Screen_height-64-49)];
+    [self.view addSubview:webView];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {

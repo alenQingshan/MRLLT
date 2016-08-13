@@ -11,12 +11,14 @@
 #import "LoginViewController.h"
 #import "HeaderView.h"
 #import "MyCollectionCell.h"
-
+#import "FirstViewCell.h"
 
 #define myCellId  @"mCellId"
 @interface FirstViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_tableview;
+    MyCollectionCell *_cell;
+    NSInteger _select;
 }
 @property(nonatomic,strong)UICollectionView *mCollevtionView;
 
@@ -32,6 +34,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    _select = -1;
     self.view.backgroundColor=WhiteColor;
     [self setNavigation:@"首页"];
     //导航栏按钮
@@ -41,10 +44,7 @@
 
 -(void)createBarButtonItem
 {
-    UIBarButtonItem *leftButton =  [UIBarButtonItem itemWithTarget:self action:@selector(backToLogin) nomalImage:[UIImage imageNamed:@"people"] higeLightedImage:[UIImage imageNamed:@"people"]];
-    self.navigationItem.leftBarButtonItem=leftButton;
-    
-    UIBarButtonItem *rightButton =  [UIBarButtonItem itemWithTarget:self action:@selector(erweima) nomalImage:[UIImage imageNamed:@"register_codes"] higeLightedImage:[UIImage imageNamed:@"register_codes"]];
+    UIBarButtonItem *rightButton =  [UIBarButtonItem itemWithTarget:self action:@selector(backToLogin) nomalImage:[UIImage imageNamed:@"people"] higeLightedImage:[UIImage imageNamed:@"people"]];
     self.navigationItem.rightBarButtonItem=rightButton;
 }
 
@@ -62,13 +62,13 @@
 
 -(void)createMainUI
 {
-    UIView *tableviewHead = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 280)];
-    HeaderView *headview = [[HeaderView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 160)];
+    UIView *tableviewHead = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 310)];
+    HeaderView *headview = [[HeaderView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 190)];
     [tableviewHead addSubview:headview];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc]init];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    self.mCollevtionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 160, Screen_width, 120) collectionViewLayout:flow];
+    self.mCollevtionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 190, Screen_width, 120) collectionViewLayout:flow];
     self.mCollevtionView.delegate = self;
     self.mCollevtionView.dataSource = self;
     [self.mCollevtionView setBackgroundColor:WhiteColor];
@@ -95,19 +95,21 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //从重用队列获取对象
-    MyCollectionCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:myCellId forIndexPath:indexPath];
+    _cell = [collectionView dequeueReusableCellWithReuseIdentifier:myCellId forIndexPath:indexPath];
     //显示数据
     NSArray *sectionArray=@[@"fa-credit-card",@"fa-file-text-o",@"fa-list-alt",@"fa-ioxhost",@"fa-usd",@"fa-volume-up"];
     NSString *str=sectionArray[indexPath.row];
-    [cell config:str index:indexPath.row];
+    [_cell config:str index:indexPath.row select:_select];
     
-    return cell;
+    return _cell;
 }
 
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //临时改变个颜色，看好，只是临时改变的。如果要永久改变，可以先改数据源，然后在cellForItemAtIndexPath中控制。（和UITableView差不多吧！O(∩_∩)O~）
+    _select = indexPath.row;
+    [self.mCollevtionView reloadData];
 }
 
 //返回这个UICollectionView是否可以被选择
@@ -151,19 +153,18 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellID = @"firstID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    FirstViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[FirstViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     NSInteger money = 20;
-    cell.textLabel.text = [NSString stringWithFormat:@"%li元",money+indexPath.row*10];
-    cell.detailTextLabel.text = @"本地可用,到账以运营商信息为准";
+    [cell config:[NSString stringWithFormat:@"%li元",money+indexPath.row*10] detail:@"本地可用,到账请以运营商信息为准!"];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 90;
 }
 
 

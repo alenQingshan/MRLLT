@@ -9,7 +9,9 @@
 #import "LoginView.h"
 
 @implementation LoginView 
-
+{
+    BOOL _rebember;
+}
 
 -(id)initWithFrame:(CGRect)frame
 {
@@ -31,12 +33,16 @@
     userback.backgroundColor = [UIColor whiteColor];
     userback.layer.borderWidth = 1;
     userback.layer.borderColor = [[UIColor grayColor] CGColor];
+    userback.layer.cornerRadius = 4;
+    userback.layer.masksToBounds = YES;
     [self addSubview:userback];
     
     UIView *passBack = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(userback.frame)+10, Screen_width-20, 44)];
     passBack.backgroundColor = [UIColor whiteColor];
     passBack.layer.borderWidth = 1;
     passBack.layer.borderColor = [[UIColor grayColor] CGColor];
+    passBack.layer.cornerRadius = 4;
+    passBack.layer.masksToBounds = YES;
     [self addSubview:passBack];
     
     _userIDField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"请输入手机号码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
@@ -53,10 +59,11 @@
     UIImageView *password = [MyUtil createImageView:CGRectMake(10, 11, 22, 22) imageName:@"register_password"];
     [passBack addSubview:password];
     
-    UIButton *rememberButton = [MyUtil createBtnFrame:CGRectMake(10, CGRectGetMaxY(passBack.frame), 22, 22) title:@"忘记密码?" backgroundColor:[UIColor clearColor] titleColor:[UIColor blackColor] target:self action:@selector(remember)];
-    [self addSubview:rememberButton];
+    _rememberButton = [MyUtil createBtnFrame:CGRectMake(10, CGRectGetMaxY(passBack.frame)+13, 18, 18) title:@"" backgroundColor:[UIColor clearColor] titleColor:[UIColor blackColor] target:self action:@selector(remember)];
+    [_rememberButton setBackgroundImage:[UIImage imageNamed:@"register_unchecked"] forState:UIControlStateNormal];
+    [self addSubview:_rememberButton];
     
-    UILabel *rememberLabel = [MyUtil createLabelFrame:CGRectMake(CGRectGetMaxX(rememberButton.frame),CGRectGetMaxY(passBack.frame), 100, 44) title:@"记住密码" font:LFFont(14)];
+    UILabel *rememberLabel = [MyUtil createLabelFrame:CGRectMake(CGRectGetMaxX(_rememberButton.frame),CGRectGetMaxY(passBack.frame), 100, 44) title:@"记住密码" font:LFFont(14)];
     rememberLabel.textColor = [UIColor blackColor];
     rememberLabel.textAlignment = NSTextAlignmentLeft;
     [self addSubview:rememberLabel];
@@ -87,31 +94,41 @@
 //remember记住密码
 -(void)remember
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRemember];
+    if (_rebember) {
+        _rebember = NO;
+        [_rememberButton setBackgroundImage:[UIImage imageNamed:@"register_unchecked"] forState:UIControlStateNormal];
+        if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
+            [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRemember isremember:_rebember];
+        }
+    }else{
+        _rebember = YES;
+        [_rememberButton setBackgroundImage:[UIImage imageNamed:@"register_checked"] forState:UIControlStateNormal];
+        if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
+            [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRemember isremember:_rebember];
+        }
     }
 }
 
 //用户注册
 -(void)userRegist
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRight];
+    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
+        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRight isremember:_rebember];
     }
 }
 //忘记密码
 -(void)forgetPass
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithLeft];
+    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
+        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithLeft isremember:_rebember];
     }
 }
 
 //登录按钮
 -(void)loginBtn
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithCenter];
+    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
+        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithCenter isremember:_rebember];
     }
 }
 
