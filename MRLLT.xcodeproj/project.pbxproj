@@ -37,10 +37,17 @@
 		EA4A15E31D5DBCDD00A0C88F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E21D5DBCDD00A0C88F /* SecondViewController.m */; };
 		EA4A15E61D5DBCED00A0C88F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E51D5DBCED00A0C88F /* ThirdViewController.m */; };
 		EA4A15E91D5DBCFD00A0C88F /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15E81D5DBCFD00A0C88F /* FourthViewController.m */; };
-		EA4A15EE1D5EF0B200A0C88F /* getMoneyHelp.html in Resources */ = {isa = PBXBuildFile; fileRef = EA4A15ED1D5EF0B200A0C88F /* getMoneyHelp.html */; };
+		EA4A15EE1D5EF0B200A0C88F /* MRLLTHelp.html in Resources */ = {isa = PBXBuildFile; fileRef = EA4A15ED1D5EF0B200A0C88F /* MRLLTHelp.html */; };
 		EA4A15F11D5EFF8300A0C88F /* FirstViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15F01D5EFF8300A0C88F /* FirstViewCell.m */; };
 		EA4A15F41D5F062800A0C88F /* FourthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15F31D5F062800A0C88F /* FourthViewCell.m */; };
 		EA4A15F71D5F0DB900A0C88F /* HeaderFourthView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15F61D5F0DB900A0C88F /* HeaderFourthView.m */; };
+		EA4A15FE1D61D30B00A0C88F /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A15FD1D61D30B00A0C88F /* NetWorking.m */; };
+		EA4A16021D61D4E400A0C88F /* CustomTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A16011D61D4E400A0C88F /* CustomTool.m */; };
+		EA4A16101D61DDF200A0C88F /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A160E1D61DDF200A0C88F /* MBProgressHUD+NJ.m */; };
+		EA4A16111D61DDF200A0C88F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA4A160F1D61DDF200A0C88F /* MBProgressHUD.bundle */; };
+		EA4A16161D63F7F900A0C88F /* Songti.ttc in Resources */ = {isa = PBXBuildFile; fileRef = EA4A16151D63F7F900A0C88F /* Songti.ttc */; };
+		EA4A16181D63FA3700A0C88F /* Hiragino Sans GB W3.ttc in Resources */ = {isa = PBXBuildFile; fileRef = EA4A16171D63FA3700A0C88F /* Hiragino Sans GB W3.ttc */; };
+		EA4A161B1D64007900A0C88F /* SecondViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A161A1D64007900A0C88F /* SecondViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,13 +128,25 @@
 		EA4A15E51D5DBCED00A0C88F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		EA4A15E71D5DBCFD00A0C88F /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		EA4A15E81D5DBCFD00A0C88F /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
-		EA4A15ED1D5EF0B200A0C88F /* getMoneyHelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = getMoneyHelp.html; sourceTree = "<group>"; };
+		EA4A15ED1D5EF0B200A0C88F /* MRLLTHelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MRLLTHelp.html; sourceTree = "<group>"; };
 		EA4A15EF1D5EFF8300A0C88F /* FirstViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewCell.h; sourceTree = "<group>"; };
 		EA4A15F01D5EFF8300A0C88F /* FirstViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewCell.m; sourceTree = "<group>"; };
 		EA4A15F21D5F062800A0C88F /* FourthViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewCell.h; sourceTree = "<group>"; };
 		EA4A15F31D5F062800A0C88F /* FourthViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewCell.m; sourceTree = "<group>"; };
 		EA4A15F51D5F0DB900A0C88F /* HeaderFourthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderFourthView.h; sourceTree = "<group>"; };
 		EA4A15F61D5F0DB900A0C88F /* HeaderFourthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderFourthView.m; sourceTree = "<group>"; };
+		EA4A15FC1D61D30B00A0C88F /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
+		EA4A15FD1D61D30B00A0C88F /* NetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorking.m; sourceTree = "<group>"; };
+		EA4A15FF1D61D35D00A0C88F /* NetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
+		EA4A16001D61D4E400A0C88F /* CustomTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTool.h; sourceTree = "<group>"; };
+		EA4A16011D61D4E400A0C88F /* CustomTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTool.m; sourceTree = "<group>"; };
+		EA4A160D1D61DDF200A0C88F /* MBProgressHUD+NJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+NJ.h"; sourceTree = "<group>"; };
+		EA4A160E1D61DDF200A0C88F /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
+		EA4A160F1D61DDF200A0C88F /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		EA4A16151D63F7F900A0C88F /* Songti.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Songti.ttc; sourceTree = "<group>"; };
+		EA4A16171D63FA3700A0C88F /* Hiragino Sans GB W3.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W3.ttc"; sourceTree = "<group>"; };
+		EA4A16191D64007900A0C88F /* SecondViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewCell.h; sourceTree = "<group>"; };
+		EA4A161A1D64007900A0C88F /* SecondViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewCell.m; sourceTree = "<group>"; };
 		EC560F0B6A654FF95DF971AA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +219,8 @@
 		EA3919F61D2A28E10013380B /* MRLLT */ = {
 			isa = PBXGroup;
 			children = (
+				EA4A16171D63FA3700A0C88F /* Hiragino Sans GB W3.ttc */,
+				EA4A16151D63F7F900A0C88F /* Songti.ttc */,
 				EA3919FA1D2A28E10013380B /* AppDelegate.h */,
 				EA3919FB1D2A28E10013380B /* AppDelegate.m */,
 				EA391A001D2A28E10013380B /* Main.storyboard */,
@@ -208,6 +229,7 @@
 				EA391A081D2A28E20013380B /* Info.plist */,
 				EA3919F71D2A28E10013380B /* Supporting Files */,
 				EA391A361D2A2A000013380B /* PCH.pch */,
+				EA4A15FF1D61D35D00A0C88F /* NetWork.h */,
 			);
 			path = MRLLT;
 			sourceTree = "<group>";
@@ -241,6 +263,8 @@
 		EA391A2A1D2A29410013380B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				EA4A16031D61DD8200A0C88F /* ThirdPath */,
+				EA4A15FB1D61D2FE00A0C88F /* NetWork */,
 				EA4A15DD1D5DBC7900A0C88F /* Fourth */,
 				EA391A5E1D2A38850013380B /* Login */,
 				EA391A391D2A2B7D0013380B /* Tool */,
@@ -299,6 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				EA391A7A1D2A392A0013380B /* MyUtil.h */,
+				EA4A16001D61D4E400A0C88F /* CustomTool.h */,
+				EA4A16011D61D4E400A0C88F /* CustomTool.m */,
 				EA391A7B1D2A392A0013380B /* MyUtil.m */,
 				EA391A431D2A2C560013380B /* UIBarButtonItem+Extension.h */,
 				EA391A441D2A2C560013380B /* UIBarButtonItem+Extension.m */,
@@ -349,7 +375,7 @@
 			children = (
 				EA4A15E41D5DBCED00A0C88F /* ThirdViewController.h */,
 				EA4A15E51D5DBCED00A0C88F /* ThirdViewController.m */,
-				EA4A15ED1D5EF0B200A0C88F /* getMoneyHelp.html */,
+				EA4A15ED1D5EF0B200A0C88F /* MRLLTHelp.html */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -387,6 +413,8 @@
 		EA391A541D2A2D1E0013380B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA4A16191D64007900A0C88F /* SecondViewCell.h */,
+				EA4A161A1D64007900A0C88F /* SecondViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -469,6 +497,33 @@
 				EA4A15F61D5F0DB900A0C88F /* HeaderFourthView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EA4A15FB1D61D2FE00A0C88F /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A15FC1D61D30B00A0C88F /* NetWorking.h */,
+				EA4A15FD1D61D30B00A0C88F /* NetWorking.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		EA4A16031D61DD8200A0C88F /* ThirdPath */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A160C1D61DDF200A0C88F /* ProgressHUD */,
+			);
+			path = ThirdPath;
+			sourceTree = "<group>";
+		};
+		EA4A160C1D61DDF200A0C88F /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A160D1D61DDF200A0C88F /* MBProgressHUD+NJ.h */,
+				EA4A160E1D61DDF200A0C88F /* MBProgressHUD+NJ.m */,
+				EA4A160F1D61DDF200A0C88F /* MBProgressHUD.bundle */,
+			);
+			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,10 +633,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA391A071D2A28E20013380B /* LaunchScreen.storyboard in Resources */,
+				EA4A16181D63FA3700A0C88F /* Hiragino Sans GB W3.ttc in Resources */,
 				EA1258261D2B420F00E2E2B8 /* getMoneyHelp.html in Resources */,
+				EA4A16161D63F7F900A0C88F /* Songti.ttc in Resources */,
 				EA391A041D2A28E20013380B /* Assets.xcassets in Resources */,
 				EA391A021D2A28E10013380B /* Main.storyboard in Resources */,
-				EA4A15EE1D5EF0B200A0C88F /* getMoneyHelp.html in Resources */,
+				EA4A15EE1D5EF0B200A0C88F /* MRLLTHelp.html in Resources */,
+				EA4A16111D61DDF200A0C88F /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,10 +715,13 @@
 				EA391A491D2A2C560013380B /* UIBarButtonItem+Extension.m in Sources */,
 				EA391A731D2A38850013380B /* LoginViewController.m in Sources */,
 				EA391A571D2A2D320013380B /* FirstViewController.m in Sources */,
+				EA4A16101D61DDF200A0C88F /* MBProgressHUD+NJ.m in Sources */,
 				EA391A761D2A38850013380B /* ForgetPasswordView.m in Sources */,
 				EA4A15F41D5F062800A0C88F /* FourthViewCell.m in Sources */,
+				EA4A161B1D64007900A0C88F /* SecondViewCell.m in Sources */,
 				EA4A15E61D5DBCED00A0C88F /* ThirdViewController.m in Sources */,
 				EA391A781D2A38850013380B /* RegisterView.m in Sources */,
+				EA4A15FE1D61D30B00A0C88F /* NetWorking.m in Sources */,
 				EA391A741D2A38850013380B /* RegisterController.m in Sources */,
 				EA391A351D2A29410013380B /* MainTabbarController.m in Sources */,
 				EA1258291D2B48EC00E2E2B8 /* MyCollectionCell.m in Sources */,
@@ -677,6 +738,7 @@
 				EA391A7C1D2A392A0013380B /* MyUtil.m in Sources */,
 				EA3919FC1D2A28E10013380B /* AppDelegate.m in Sources */,
 				EA3919F91D2A28E10013380B /* main.m in Sources */,
+				EA4A16021D61D4E400A0C88F /* CustomTool.m in Sources */,
 				EA391A4B1D2A2C560013380B /* UIView+Extension.m in Sources */,
 				EA391A7F1D2A51F10013380B /* SynthSegment.m in Sources */,
 				EA391A341D2A29410013380B /* MainNavController.m in Sources */,
@@ -822,12 +884,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MRLLT/PCH.pch";
 				INFOPLIST_FILE = MRLLT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.canls.MRLLT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.canls.sjzmrllt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -837,12 +903,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MRLLT/PCH.pch";
 				INFOPLIST_FILE = MRLLT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.canls.MRLLT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.canls.sjzmrllt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

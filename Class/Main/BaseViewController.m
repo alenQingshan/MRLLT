@@ -19,7 +19,9 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets=NO;
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+
+
 //    self.navigationController.navigationBar.barTintColor = TintColor;//只写这个会存在问题
 //    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
 //    [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:TintColor] forBarMetrics:UIBarMetricsDefault];
@@ -45,6 +47,9 @@
 {
     [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:TintColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont systemFontOfSize:22],
+       NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self.navigationController.navigationBar setShadowImage:[self createImageWithColor:[UIColor clearColor]]];
     self.navigationItem.title = title;
 }

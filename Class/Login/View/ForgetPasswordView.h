@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 
 @protocol ForgetPasswordViewDelegate <NSObject>
 
--(void)leftPresonalAndNotification:(ForgetPasswordView *)view leftOrRight:(NSInteger)wtf;
+-(void)ForgetPasswordView:(ForgetPasswordView *)view userName:(NSString *)phone passWord:(NSString *)pwd;
 
 @optional
 

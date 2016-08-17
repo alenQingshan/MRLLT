@@ -20,11 +20,17 @@
 
 @implementation LoginViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNavigation:@"登录"];
     [self cteateUI];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 -(void)cteateUI
@@ -50,33 +56,35 @@
 */
 
 #pragma mark - LoginViewDelegate
--(void)leftPresonalAndNotification:(LoginView *)view centerLeftOrRight:(NSInteger)wtf isremember:(BOOL)remem
+-(void)LoginView:(LoginView *)view centerLeftOrRight:(NSInteger)wtf isremember:(BOOL)remem username:(NSString *)phone passwork:(NSString *)pwd
 {
     ForgetController *forget = [[ForgetController alloc]init];
     RegisterController *regist = [[RegisterController alloc]init];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    MainTabbarController *tabVC = [[MainTabbarController alloc] init];
-    AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     switch (wtf) {
         case 1:
             [self.navigationController pushViewController:forget animated:YES];
             break;
         case 2:
-            window.rootViewController = tabVC;
-            del.tabVC = tabVC;
+            [self loginMR:phone password:pwd];
             break;
         case 3:
             [self.navigationController pushViewController:regist animated:YES];
             break;
-        case 4:
-            //记住密码
+        default:
+            NSLog(@"!");
             break;
-//        default:
-//            NSLog(@"!");
-//            break;
     }
 }
 
-
+-(void)loginMR:(NSString *)user password:(NSString *)pwd{
+//    [NetWorking loginblock:^(NSMutableDictionary *dict) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        MainTabbarController *tabVC = [[MainTabbarController alloc] init];
+        AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        window.rootViewController = tabVC;
+        del.tabVC = tabVC;
+//    } username:user password:pwd];
+}
 
 @end

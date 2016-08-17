@@ -29,21 +29,13 @@
     [self addSubview:titleimage];
 
     
-    UIView *userback = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(titleimage.frame)+20, Screen_width-20, 44)];
+    UIView *userback = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(titleimage.frame)+20, Screen_width-20, 88)];
     userback.backgroundColor = [UIColor whiteColor];
     userback.layer.borderWidth = 1;
     userback.layer.borderColor = [[UIColor grayColor] CGColor];
     userback.layer.cornerRadius = 4;
     userback.layer.masksToBounds = YES;
     [self addSubview:userback];
-    
-    UIView *passBack = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(userback.frame)+10, Screen_width-20, 44)];
-    passBack.backgroundColor = [UIColor whiteColor];
-    passBack.layer.borderWidth = 1;
-    passBack.layer.borderColor = [[UIColor grayColor] CGColor];
-    passBack.layer.cornerRadius = 4;
-    passBack.layer.masksToBounds = YES;
-    [self addSubview:passBack];
     
     _userIDField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"请输入手机号码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
     _userIDField.delegate = self;
@@ -52,23 +44,32 @@
     UIImageView *userimage = [MyUtil createImageView:CGRectMake(10, 11, 22, 22) imageName:@"register_invitation_code"];
     [userback addSubview:userimage];
     
-    _passwordField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"6-16字符,区分大小写,非纯数字" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 43.5, Screen_width-20, 1)];
+    lineView.backgroundColor = [UIColor grayColor];
+    [userback addSubview:lineView];
+    
+    _passwordField = [MyUtil createTextFieldFrame:CGRectMake(44, 44, Screen_width-64, 44) placeHolder:@"6-16字符,区分大小写,非纯数字" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
     _passwordField.delegate = self;
-    [passBack addSubview:_passwordField];
+    [userback addSubview:_passwordField];
     
-    UIImageView *password = [MyUtil createImageView:CGRectMake(10, 11, 22, 22) imageName:@"register_password"];
-    [passBack addSubview:password];
+    UIImageView *password = [MyUtil createImageView:CGRectMake(10, 55, 22, 22) imageName:@"register_password"];
+    [userback addSubview:password];
     
-    _rememberButton = [MyUtil createBtnFrame:CGRectMake(10, CGRectGetMaxY(passBack.frame)+13, 18, 18) title:@"" backgroundColor:[UIColor clearColor] titleColor:[UIColor blackColor] target:self action:@selector(remember)];
+    _rememberButton = [MyUtil createBtnFrame:CGRectMake(10, CGRectGetMaxY(userback.frame)+13, 18, 18) title:@"" backgroundColor:[UIColor clearColor] titleColor:[UIColor blackColor] target:self action:@selector(remember)];
     [_rememberButton setBackgroundImage:[UIImage imageNamed:@"register_unchecked"] forState:UIControlStateNormal];
     [self addSubview:_rememberButton];
     
-    UILabel *rememberLabel = [MyUtil createLabelFrame:CGRectMake(CGRectGetMaxX(_rememberButton.frame),CGRectGetMaxY(passBack.frame), 100, 44) title:@"记住密码" font:LFFont(14)];
+    UILabel *rememberLabel = [MyUtil createLabelFrame:CGRectMake(CGRectGetMaxX(_rememberButton.frame),CGRectGetMaxY(userback.frame), 100, 44) title:@"记住密码" font:LFFont(14)];
     rememberLabel.textColor = [UIColor blackColor];
+    if(is6PSinch){
+        rememberLabel.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:I6SPFont_btn];
+    }else{
+        rememberLabel.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:IothFont_btn];
+    }
     rememberLabel.textAlignment = NSTextAlignmentLeft;
     [self addSubview:rememberLabel];
     
-    UIButton *forgetPassword = [MyUtil createBtnFrame:CGRectMake(Screen_width/4*3, CGRectGetMaxY(passBack.frame), Screen_width/4, 44) title:@"忘记密码?" backgroundColor:[UIColor clearColor] titleColor:[UIColor blackColor] target:self action:@selector(forgetPass)];
+    UIButton *forgetPassword = [MyUtil createBtnFrame:CGRectMake(Screen_width/4*3, CGRectGetMaxY(userback.frame), Screen_width/4, 44) title:@"忘记密码?" backgroundColor:[UIColor clearColor] titleColor:[UIColor blackColor] target:self action:@selector(forgetPass)];
     [self addSubview:forgetPassword];
     
     UIButton *loginButton = [MyUtil createBtnFrame:CGRectMake(20, CGRectGetMaxY(forgetPassword.frame)+20, Screen_width-40, 40) title:@"登录" backgroundColor:TintColor titleColor:[UIColor whiteColor] target:self action:@selector(loginBtn)];
@@ -97,14 +98,14 @@
     if (_rebember) {
         _rebember = NO;
         [_rememberButton setBackgroundImage:[UIImage imageNamed:@"register_unchecked"] forState:UIControlStateNormal];
-        if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
-            [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRemember isremember:_rebember];
+        if ([_delegate respondsToSelector:@selector(LoginView:centerLeftOrRight:isremember:username:passwork:)]){
+            [_delegate LoginView:self centerLeftOrRight:ButtonTypeWithRemember isremember:_rebember username:nil passwork:nil];
         }
     }else{
         _rebember = YES;
         [_rememberButton setBackgroundImage:[UIImage imageNamed:@"register_checked"] forState:UIControlStateNormal];
-        if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
-            [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRemember isremember:_rebember];
+        if ([_delegate respondsToSelector:@selector(LoginView:centerLeftOrRight:isremember:username:passwork:)]){
+            [_delegate LoginView:self centerLeftOrRight:ButtonTypeWithRemember isremember:_rebember username:nil passwork:nil];
         }
     }
 }
@@ -112,23 +113,27 @@
 //用户注册
 -(void)userRegist
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithRight isremember:_rebember];
+    if ([_delegate respondsToSelector:@selector(LoginView:centerLeftOrRight:isremember:username:passwork:)]){
+        [_delegate LoginView:self centerLeftOrRight:ButtonTypeWithRight isremember:_rebember username:self.userIDField.text passwork:self.passwordField.text];
     }
 }
 //忘记密码
 -(void)forgetPass
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithLeft isremember:_rebember];
+    if ([_delegate respondsToSelector:@selector(LoginView:centerLeftOrRight:isremember:username:passwork:)]){
+        [_delegate LoginView:self centerLeftOrRight:ButtonTypeWithLeft isremember:_rebember username:self.userIDField.text passwork:self.passwordField.text];
     }
 }
 
 //登录按钮
 -(void)loginBtn
 {
-    if ([_delegate respondsToSelector:@selector(leftPresonalAndNotification:centerLeftOrRight:isremember:)]){
-        [_delegate leftPresonalAndNotification:self centerLeftOrRight:ButtonTypeWithCenter isremember:_rebember];
+    if (self.userIDField.text.length > 0 && self.passwordField.text.length) {
+        if ([_delegate respondsToSelector:@selector(LoginView:centerLeftOrRight:isremember:username:passwork:)]){
+            [_delegate LoginView:self centerLeftOrRight:ButtonTypeWithCenter isremember:_rebember username:self.userIDField.text passwork:self.passwordField.text];
+        }
+    }else{
+        [MBProgressHUD showError:@"请输入手机号与密码!"];
     }
 }
 
@@ -147,6 +152,14 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""]; //按cs分离出数组,数组按@""分离出字符串
+    BOOL canChange = [string isEqualToString:filtered];
+    return textField.text.length>=16?NO: canChange;
 }
 
 @end

@@ -108,27 +108,62 @@
 //}
 
 //查看合同
--(void)contract
-{
-    
-}
+//-(void)contract
+//{
+//    
+//}
 
 //获取验证码
 -(void)getTextWord
 {
-    if (self.userIDField.text.length < 11){
+    if (self.userIDField.text.length != 11){
+        [MBProgressHUD showError:@"请输入正确手机号!"];
         return;
     }else{
-        NSLog(@"请输入手机号码");
+        if ([CustomTool isAllNum:self.userIDField.text]){
+            [NetWorking getVercodeblock:^(NSMutableDictionary *dict) {
+                
+            } username:self.userIDField.text];
+        }else{
+            [MBProgressHUD showError:@"请输入正确手机号!"];
+        }
     }
     if (self.second < 60) return;
     [self addTimer];
 }
 
-//注册
+//找回密码
 -(void)registerUser
 {
-    NSLog(@"点击");
+    if(self.userIDField.text.length == 11){
+        if(self.passwordField.text.length > 0){
+            
+            if ([CustomTool isAllNum:self.invitationField.text]) {
+                [MBProgressHUD showError:@"请输入数字与字母组合的密码"];
+            }else{
+                if ([CustomTool PureLetters:self.invitationField.text]) {
+                    [MBProgressHUD showError:@"请输入数字与字母组合的密码"];
+                }else{
+                    if([self.invitationField.text isEqualToString:self.testwordField.text]){
+                        if (self.invitationField.text.length>=6) {
+                            //返回并请求
+                            if ([_delegate respondsToSelector:@selector(ForgetPasswordView:userName:passWord:)]){
+                                [_delegate ForgetPasswordView:self userName:self.userIDField.text passWord:self.invitationField.text];
+                            }
+                        }else{
+                            [MBProgressHUD showError:@"请输入6位以上16位一下密码!"];
+                        }
+                    }else{
+                        [MBProgressHUD showError:@"请输入相同密码"];
+                    }
+                }
+            }
+        }else{
+            [MBProgressHUD showError:@"请输入正确验证码!"];
+        }
+    }else{
+        [MBProgressHUD showError:@"请输入正确手机号!"];
+    }
 }
 
 #pragma mark - 倒计时
@@ -177,6 +212,14 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""]; //按cs分离出数组,数组按@""分离出字符串
+    BOOL canChange = [string isEqualToString:filtered];
+    return textField.text.length>=16?NO: canChange;
 }
 
 /*

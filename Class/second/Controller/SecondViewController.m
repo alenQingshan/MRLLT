@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-
+#import "SecondViewCell.h"
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_tableview;
@@ -28,6 +28,7 @@
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, Screen_height-64-44) style:UITableViewStylePlain];
     _tableview.delegate = self;
     _tableview.dataSource = self;
+    _tableview.tableFooterView = [[UIView alloc]init];
     [self.view addSubview:_tableview];
 }
 
@@ -59,16 +60,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellid = @"cellid";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    static NSString *cellID = @"firstID";
+    SecondViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellid];
+        cell = [[SecondViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     NSArray *arr = [NSArray arrayWithObjects:@"河北省内",@"浙江移动3G",@"电信省内1G",@"中国移动WiFi覆盖通知",@"下载米瑞app",nil];
     NSArray *arrdetail = [NSArray arrayWithObjects:@"米瑞推出河北省内流量包1G25元",@"浙江移动300M15元",@"电信省内1G流量30元,更有积分来拿",@"8月起石家庄为第一试点",@"米瑞app致力于为您提供优质服务",nil];
-    cell.textLabel.text = arr[indexPath.row];
-    cell.detailTextLabel.text = arrdetail[indexPath.row];
-    cell.detailTextLabel.textColor = [UIColor grayColor];
+    [cell secondconfig:arr[indexPath.row] detail:arrdetail[indexPath.row]];
     return cell;
 }
 

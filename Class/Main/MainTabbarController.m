@@ -34,18 +34,18 @@
     
     self.tabBar.tintColor=TintColor;
     self.delegate = self;
-    self.tabBar.backgroundColor=[UIColor whiteColor];
+//    self.tabBar.backgroundColor=[UIColor whiteColor];
     
-    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    [self.tabBar setBackgroundImage:img];
-    [self.tabBar setShadowImage:img];
-    [self.tabBar setBackgroundImage:[self createImageWithColor:[UIColor whiteColor]]];
+//    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    UIGraphicsBeginImageContext(rect.size);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
+//    CGContextFillRect(context, rect);
+//    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    [self.tabBar setBackgroundImage:img];
+//    [self.tabBar setShadowImage:img];
+//    [self.tabBar setBackgroundImage:[self createImageWithColor:[UIColor whiteColor]]];
     
 }
 

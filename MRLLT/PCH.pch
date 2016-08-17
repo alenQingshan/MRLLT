@@ -17,15 +17,20 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIButton+Extension.h"
 #import "MyUtil.h"
+#import "NetWorking.h"
+#import "CustomTool.h"
+#import "NetWork.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+NJ.h"
 
 #define QS_textFieldCorner 5
 #define QS_buttonCorner 5
 
 #define FirstBackcolor [UIColor colorWithRed:242.0/255 green:255.0/255 blue:36.0/255 alpha:1.0]
-#define TintColor [UIColor colorWithRed:216.0/255 green:41.0/255 blue:58.0/255 alpha:1.0]//导航栏主题色
+#define TintColor [UIColor colorWithRed:225.0/255 green:41.0/255 blue:58.0/255 alpha:1.0]//导航栏主题色
 #define WhiteColor [UIColor colorWithRed:236.0/255 green:236.0/255 blue:236.0/255 alpha:1.0]//主题色
 #define Login_right_color [UIColor colorWithRed:65.0/255 green:176.0/255 blue:146.0/255 alpha:1.0]
-
+#define Black_color [UIColor colorWithRed:0.0/255 green:0.0/255 blue:0.0/255 alpha:0.8]
 
 // 判断是否为4Sinch
 #define is4Sinch ([UIScreen mainScreen].bounds.size.height < 568.0)

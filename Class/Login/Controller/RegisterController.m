@@ -8,7 +8,7 @@
 
 #import "RegisterController.h"
 #import "RegisterView.h"
-@interface RegisterController ()
+@interface RegisterController ()<RegisterViewDelegate>
 
 @property(nonatomic,strong)RegisterView *registerView;
 
@@ -23,11 +23,18 @@
     [self cteateUI];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 -(void)cteateUI
 {
     _registerView = [[RegisterView alloc]initWithFrame:self.view.bounds];
+    _registerView.delegate = self;
     [self.view addSubview:_registerView];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,6 +50,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - RegisterViewDelegate
+-(void)RegisterView:(RegisterView *)view phoneNum:(NSString *)phone verCode:(NSString *)code passWord:(NSString *)pwd
+{
+    [NetWorking registerblock:^(NSMutableDictionary *dict) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } username:phone password:pwd re_password:pwd vercode:code];
+}
 
 
 @end

@@ -11,7 +11,7 @@
 @implementation FirstViewCell
 {
     UILabel *_titleLabel;
-    UILabel *_detailLabel;
+    UITextView *_detailLabel;
     UIButton *_goumaiButton;
 }
 
@@ -26,25 +26,32 @@
 
 -(void)crateUI
 {
-    _titleLabel = [MyUtil createLabelFrame:CGRectMake(20, 0, Screen_width/3*2, 30) title:@"" font:LFFont(TitleFont)];
-    _titleLabel.textColor = TintColor;
+    _titleLabel = [MyUtil createLabelFrame:CGRectMake(15, 10, Screen_width/3*2, 20) title:@"" font:LFFont(TitleFont)];
+    
+    _titleLabel.font = LFFont(TitleFont);
+    _titleLabel.textColor = Black_color;
     [self.contentView addSubview:_titleLabel];
-    _detailLabel = [MyUtil createLabelFrame:CGRectMake(20, 30, Screen_width/3*2, 60) title:@"" font:LFFont(TitleFont)];
-    _detailLabel.numberOfLines = 0;
+    
+    _detailLabel = [[UITextView alloc]initWithFrame:CGRectMake(10, 30, Screen_width/3*2, 60)];
+    _detailLabel.scrollEnabled = NO;
+    _detailLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:_detailLabel];
     
-    _goumaiButton = [MyUtil createBtnFrame:CGRectMake(Screen_width-80, 45, 60, 30) title:@"购买" backgroundColor:[UIColor whiteColor] titleColor:TintColor target:nil action:nil];
+    _goumaiButton = [MyUtil createBtnFrame:CGRectMake(Screen_width-80, 25, 60, 30) title:@"购买" backgroundColor:[UIColor whiteColor] titleColor:TintColor target:nil action:nil];
     _goumaiButton.layer.borderWidth = 1;
     _goumaiButton.layer.borderColor = [TintColor CGColor];
     [self.contentView addSubview:_goumaiButton];
     
-    
 }
 
--(void)config:(NSString *)title detail:(NSString *)detal
+-(void)firstconfig:(NSString *)title detail:(NSString *)detal
 {
     _titleLabel.text = title;
-    _detailLabel.text = detal;
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:detal];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, str.length)];
+    [str addAttribute:NSForegroundColorAttributeName value:TintColor range:NSMakeRange(0,4)];
+    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HiraginoSansGB-W3" size:14] range:NSMakeRange(0, str.length)];
+    _detailLabel.attributedText = str;
 }
 
 

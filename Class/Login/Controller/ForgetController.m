@@ -46,12 +46,11 @@
 }
 */
 #pragma mark - ForgetPasswordViewDelegate
--(void)leftPresonalAndNotification:(ForgetPasswordView *)view leftOrRight:(NSInteger)wtf
+-(void)ForgetPasswordView:(ForgetPasswordView *)view userName:(NSString *)phone passWord:(NSString *)pwd
 {
-    if (wtf == 1) {
-        
-    }else{
-    }
+    [NetWorking ForgetPassword:^(NSMutableDictionary *dict) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } username:phone password:pwd re_password:pwd];
 }
 
 @end

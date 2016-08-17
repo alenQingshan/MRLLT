@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
 
 @protocol RegisterViewDelegate <NSObject>
 
--(void)leftPresonalAndNotification:(RegisterView *)view leftOrRight:(NSInteger)wtf;
+-(void)RegisterView:(RegisterView *)view phoneNum:(NSString *)phone verCode:(NSString *)code passWord:(NSString *)pwd;
 
 @optional
 

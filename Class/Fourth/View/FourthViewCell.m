@@ -30,22 +30,27 @@
 -(void)crateUI
 {
     _timelabel = [MyUtil createLabelFrame:CGRectMake(10, 10, 60, 20) title:@"7-31" font:LFFont(TitleFont)];
+    _timelabel.textColor =  Black_color;
     [self.contentView addSubview:_timelabel];
     
     _timedetaillabel = [MyUtil createLabelFrame:CGRectMake(10, 30, 60, 20) title:@"9:10" font:LFFont(TitleFont)];
+    _timedetaillabel.textColor =  Black_color;
     [self.contentView addSubview:_timedetaillabel];
     
     _imageview = [MyUtil createImageView:CGRectMake(80, 10, 40, 40) imageName:@"dianxin"];
     [self.contentView addSubview:_imageview];
     
     _moneyLabel = [MyUtil createLabelFrame:CGRectMake(140, 10, Screen_width-220, 20) title:@"12.5" font:LFFont(TitleFont)];
+    _moneyLabel.textColor =  Black_color;
     _moneyLabel.font = LFFont(16);
     [self.contentView addSubview:_moneyLabel];
     
     _modey_detailLabel = [MyUtil createLabelFrame:CGRectMake(140, 30, Screen_width-160, 20) title:@"100M-17701849938" font:LFFont(TitleFont)];
+    _modey_detailLabel.textColor =  Black_color;
     [self.contentView addSubview:_modey_detailLabel];
     
     _typeLabel = [MyUtil createLabelFrame:CGRectMake(Screen_width-80, 10, 60, 20) title:@"交易成功" font:LFFont(TitleFont)];
+    _typeLabel.textColor =  Black_color;
     [self.contentView addSubview:_typeLabel];
     
 }

@@ -59,10 +59,12 @@
     
     _userIDField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"请输入手机号码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
     _userIDField.delegate = self;
+    _userIDField.keyboardType = UIKeyboardTypeASCIICapable;
     [userback addSubview:_userIDField];
     
     _passwordField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width/3*2-44, 44) placeHolder:@"请输入短信验证码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
     _passwordField.delegate = self;
+    _passwordField.keyboardType = UIKeyboardTypeASCIICapable;
     [passBack addSubview:_passwordField];
     
     _getTestword = [MyUtil createBtnFrame:CGRectMake(CGRectGetMaxX(_passwordField.frame), 5, Screen_width/3-30, 34) title:@"获取验证码" backgroundColor:[UIColor whiteColor] titleColor:TintColor target:self action:@selector(getTextWord)];
@@ -72,10 +74,12 @@
     
     _invitationField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"请输入新密码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
     _invitationField.delegate = self;
+    _invitationField.keyboardType = UIKeyboardTypeASCIICapable;
     [invitBack addSubview:_invitationField];
     
     _testwordField = [MyUtil createTextFieldFrame:CGRectMake(44, 0, Screen_width-64, 44) placeHolder:@"再次确认密码" isPwd:NO pleaseColor:[UIColor clearColor] pleaseRadius:QS_textFieldCorner];
     _testwordField.delegate = self;
+    _testwordField.keyboardType = UIKeyboardTypeASCIICapable;
     [testback addSubview:_testwordField];
     
 //    _addButton = [MyUtil createBtnFrame:CGRectMake(20, CGRectGetMaxY(testback.frame)+20, 20, 20) title:nil backgroundColor:nil titleColor:[UIColor whiteColor] target:self action:@selector(addcon)];
@@ -117,18 +121,25 @@
 //}
 
 //查看合同
--(void)contract
-{
-    
-}
+//-(void)contract
+//{
+//    
+//}
 
 //获取验证码
 -(void)getTextWord
 {
-    if (self.userIDField.text.length < 11){
+    if (self.userIDField.text.length != 11){
+        [MBProgressHUD showError:@"请输入正确手机号!"];
         return;
     }else{
-        NSLog(@"请输入手机号码");
+        if ([CustomTool isAllNum:self.userIDField.text]){
+            [NetWorking getVercodeblock:^(NSMutableDictionary *dict) {
+                
+            } username:self.userIDField.text];
+        }else{
+            [MBProgressHUD showError:@"请输入正确手机号!"];
+        }
     }
     if (self.second < 60) return;
     [self addTimer];
@@ -137,7 +148,35 @@
 //注册
 -(void)registerUser
 {
-    NSLog(@"点击");
+    if(self.userIDField.text.length == 11){
+        if(self.passwordField.text.length > 0){
+            
+            if ([CustomTool isAllNum:self.invitationField.text]) {
+                [MBProgressHUD showError:@"请输入数字与字母组合的密码"];
+            }else{
+                if ([CustomTool PureLetters:self.invitationField.text]) {
+                    [MBProgressHUD showError:@"请输入数字与字母组合的密码"];
+                }else{
+                    if([self.invitationField.text isEqualToString:self.testwordField.text]){
+                        if (self.invitationField.text.length>=6) {
+                            //返回并请求
+                            if ([_delegate respondsToSelector:@selector(RegisterView:phoneNum:verCode:passWord:)]){
+                                [_delegate RegisterView:self phoneNum:self.userIDField.text verCode:self.passwordField.text passWord:self.invitationField.text];
+                            }
+                        }else{
+                            [MBProgressHUD showError:@"请输入6位以上16位一下密码!"];
+                        }
+                    }else{
+                        [MBProgressHUD showError:@"请输入相同密码"];
+                    }
+                }
+            }
+        }else{
+            [MBProgressHUD showError:@"请输入正确验证码!"];
+        }
+    }else{
+        [MBProgressHUD showError:@"请输入正确手机号!"];
+    }
 }
 
 #pragma mark - 倒计时
@@ -188,8 +227,13 @@
     return YES;
 }
 
-
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""]; //按cs分离出数组,数组按@""分离出字符串
+    BOOL canChange = [string isEqualToString:filtered];
+    return textField.text.length>=16?NO: canChange;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -18,7 +18,7 @@ typedef enum : NSUInteger {
 
 @protocol LoginViewDelegate <NSObject>
 
--(void)leftPresonalAndNotification:(LoginView *)view centerLeftOrRight:(NSInteger)wtf isremember:(BOOL)remem;
+-(void)LoginView:(LoginView *)view centerLeftOrRight:(NSInteger)wtf isremember:(BOOL)remem username:(NSString *)phone passwork:(NSString *)pwd;
 
 @optional
 

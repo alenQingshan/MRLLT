@@ -10,6 +10,6 @@
 
 @interface FirstViewCell : UITableViewCell
 
--(void)config:(NSString *)title detail:(NSString *)detal;
+-(void)firstconfig:(NSString *)title detail:(NSString *)detal;
 
 @end

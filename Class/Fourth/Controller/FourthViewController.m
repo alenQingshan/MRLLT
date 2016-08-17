@@ -94,14 +94,23 @@
 {
     //计算头部文字
     NSInteger yue = 7;
-    NSString* str = [NSString stringWithFormat:@"%li月",yue-section];
+    NSString* str;
+    if (section == 0) {
+        str = @"";
+    }else{
+        str = [NSString stringWithFormat:@"%li月",yue-section];
+    }
     
     return str ;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40;
+    if (section == 0) {
+        return 0.1;
+    }else{
+        return 40;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

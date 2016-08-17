@@ -26,9 +26,10 @@
 
 @implementation FirstViewController
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    [self loadData];
 }
 
 -(void)viewDidLoad
@@ -40,6 +41,10 @@
     //导航栏按钮
     [self createBarButtonItem];
     [self createMainUI];
+}
+
+-(void)loadData
+{
 }
 
 -(void)createBarButtonItem
@@ -62,13 +67,16 @@
 
 -(void)createMainUI
 {
-    UIView *tableviewHead = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 310)];
-    HeaderView *headview = [[HeaderView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 190)];
+    UIView *tableviewHead = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 350)];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 349, Screen_width, 1)];
+    lineView.backgroundColor = WhiteColor;
+    [tableviewHead addSubview:lineView];
+    HeaderView *headview = [[HeaderView alloc]initWithFrame:CGRectMake(0, 0, Screen_width, 210)];
     [tableviewHead addSubview:headview];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc]init];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    self.mCollevtionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 190, Screen_width, 120) collectionViewLayout:flow];
+    self.mCollevtionView = [[UICollectionView alloc]initWithFrame:CGRectMake(5, 210, Screen_width-10, 120) collectionViewLayout:flow];
     self.mCollevtionView.delegate = self;
     self.mCollevtionView.dataSource = self;
     [self.mCollevtionView setBackgroundColor:WhiteColor];
@@ -110,6 +118,10 @@
     //临时改变个颜色，看好，只是临时改变的。如果要永久改变，可以先改数据源，然后在cellForItemAtIndexPath中控制。（和UITableView差不多吧！O(∩_∩)O~）
     _select = indexPath.row;
     [self.mCollevtionView reloadData];
+    
+    [NetWorking getPrice:^(NSMutableDictionary *dict) {
+        
+    } phoneNum:@"17701849938" flowSize:@"500"];
 }
 
 //返回这个UICollectionView是否可以被选择
@@ -123,7 +135,7 @@
 //定义每个Item 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((Screen_width-8)/3, 57.5);
+    return CGSizeMake((Screen_width-10-8)/3, 57.5);
 }
 
 //定义每个UICollectionView 的 margin
@@ -158,7 +170,7 @@
         cell = [[FirstViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     NSInteger money = 20;
-    [cell config:[NSString stringWithFormat:@"%li元",money+indexPath.row*10] detail:@"本地可用,到账请以运营商信息为准!"];
+    [cell firstconfig:[NSString stringWithFormat:@"%li元",money+indexPath.row*10] detail:@"本地可用,到账请以运营商信息为准!当月有效,每月限制充值5次!....................."];
     return cell;
 }
 

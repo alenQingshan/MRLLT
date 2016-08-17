@@ -28,9 +28,9 @@
     }
     if (font){
         if(is6PSinch){
-            label.font = LFFont(I6SPFont);
+            label.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:I6SPFont];
         }else{
-            label.font = LFFont(IothFont);
+            label.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:IothFont];
         }
     }
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -51,12 +51,11 @@
     }
     if (font){
         if(is6PSinch){
-            label.font = LFFont(I6SPFont);
+            label.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:I6SPFont];
         }else{
-            label.font = LFFont(IothFont);
+            label.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:IothFont];
         }
     }
-    label.textColor = QS_LabelTextColor;
     return label;
 }
 
@@ -119,9 +118,9 @@
     }
     
     if(is6PSinch){
-        btn.titleLabel.font = LFFont(I6SPFont_btn);
+        btn.titleLabel.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:I6SPFont_btn];
     }else{
-        btn.titleLabel.font = LFFont(IothFont_btn);
+        btn.titleLabel.font = [UIFont fontWithName:@"HiraginoSansGB-W3" size:IothFont_btn];
     }
     return btn;
 }
